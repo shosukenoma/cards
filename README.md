@@ -1,1 +1,1 @@
-# go-cards
+# cards
