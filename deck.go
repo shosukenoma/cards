@@ -12,8 +12,9 @@ func newDeck() deck {
 	cardSuits := []string{"Spades", "Clubs", "Diamonds", "Hearts"}
 	cardValues := []string{"Ace", "Two", "Three", "Four"}
 
-	for i, suit := range cardSuits {
-		for j, value := range cardValues {
+	// use _ for variables that we won't be using later.
+	for _, suit := range cardSuits {
+		for _, value := range cardValues {
 			cards = append(cards, value + " of " + suit)
 		}
 	}
