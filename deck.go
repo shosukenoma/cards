@@ -13,7 +13,7 @@ type deck []string
 
 func newDeck() deck {
 	cards := deck{}
-	cardSuits := []string{"Spades", "Clubs", "Diamonds", "Hearts"}
+	cardSuits := []string{"Spades", "Hearts", "Diamonds", "Clubs"}
 	cardValues := []string{"Ace", "Two", "Three", "Four"}
 
 	// use _ for variables that we won't be using later.
@@ -38,6 +38,9 @@ func (d deck) print() {
 func deal(d deck, handSize int) (deck, deck) {
 	return d[:handSize], d[handSize:]
 }
+// Why don't we take a receiver for deal?
+// If we did cards.deal(handSize), it would seem as if we're modifying the original deck of cards.
+// Here, we only want to make subset copies from the original deck.
 
 func (d deck) shuffle() {
 	// Preperation for generating a truly random number
